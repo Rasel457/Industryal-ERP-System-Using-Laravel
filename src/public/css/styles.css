@@ -1,0 +1,20 @@
+.dropshadow-padding{
+    -webkit-box-shadow:3px 3px 5px 6px #ccc;
+    -moz-box-shadow:3px 3px 5px 6px #ccc;
+    box-shadow:3px 3px 5px 6px #ccc;
+    padding: 20px;
+  }
+  
+  .dropshadow{
+    -webkit-box-shadow:3px 3px 5px 6px #ccc;
+    -moz-box-shadow:3px 3px 5px 6px #ccc;
+    box-shadow:3px 3px 5px 6px #ccc;
+  }
+  
+  .scroll-box {
+    overflow-y: scroll;
+    height: 100px;
+    padding: 1rem
+  }
+
+  

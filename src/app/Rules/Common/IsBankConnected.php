@@ -1,0 +1,47 @@
+<?php
+
+namespace App\Rules\Common;
+
+use Illuminate\Contracts\Validation\Rule;
+use App\Models\Finance\Bank;
+
+class IsBankConnected implements Rule
+{
+    /**
+     * Create a new rule instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Determine if the validation rule passes.
+     *
+     * @param  string  $attribute
+     * @param  mixed  $value
+     * @return bool
+     */
+    public function passes($attribute, $value)
+    {
+        $bank = Bank::firstWhere('manager_id', session('id'));
+        if($bank){
+            if(count((array)$bank) > 0){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Get the validation error message.
+     *
+     * @return string
+     */
+    public function message()
+    {
+        return '* Please Connect a Bank First';
+    }
+}
